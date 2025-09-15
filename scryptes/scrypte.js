@@ -2,13 +2,13 @@ console.log("Hello world from script.js");
 
 let title = document.querySelector('h1');
 
-title.innerText += " from js"
+title.innerText += " from js";
 
 title.style.color = "darkviolet";
 
 title.after("Welcome the DOM");
 
-//Affichage de l'heure et mise à jour toutes les 1000 secondes
+//Affichage de l'heure et mise à jour toutes les 1000 millisecondes
 setInterval(() => {
     document.querySelector("h3").innerText = new Date().toLocaleTimeString();
 }, 1000);
@@ -24,16 +24,17 @@ lastLi.innerText = 'Item 3';
 ul.append(lastLi);
 
 // Ajout des boutons
-image = document.querySelector('img');
-
-
-let paragrapheImg =  document.getElementById("paragraphe-img");
+let image = document.querySelector('img');
+let paragrapheImg = document.getElementById("paragraphe-img");
 
 let buttonShakeImg = document.createElement('button');
-buttonShakeImg.id="button-shake-img";
-buttonShakeImg.innerText = "Shake a image";
+buttonShakeImg.id = "button-shake-img";
+buttonShakeImg.innerText = "Shake / Unshake image";
 paragrapheImg.appendChild(buttonShakeImg);
 
+//Déclenchement du shake / unshake de l'image
 buttonShakeImg.addEventListener('click', function() {
-image.classList.add("shake");
- });
+    image.classList.toggle("shake");
+});
+
+
